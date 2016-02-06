@@ -1,7 +1,7 @@
 {
   "name": "immutable-records",
   "description": "Immutable Records (faster than immutable.js)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/OutSystems/immutable-records",
   "author": {
     "name": "Miguel Ventura",
@@ -14,33 +14,29 @@
   "bugs": {
     "url": "https://github.com/OutSystems/immutable-records/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/OutSystems/immutable-records/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "main": "src/immutable-records.js",
   "engines": {
     "node": ">= 0.10.0"
   },
   "scripts": {
+    "compile": "tsc src/immutable-records.ts --module umd",
+    "prepublish": "npm run compile"
   },
   "dependencies": {
   },
   "devDependencies": {
+    "typescript": "^1.7.5"
   },
   "keywords": [
     "record",
     "structure",
     "schema",
-    "typed",
     "immutable",
-    "immutablejs"
     "data",
     "persistent",
     "datastructure",
     "functional",
-    "immutable-record",
+    "immutable-record"
   ]
 }

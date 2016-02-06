@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2015-2016, OutSystems SA
  * All rights reserved.
- * 
- * Licensed under the MIT license. See LICENSE file in the project root for full license information. 
+ *
+ * Licensed under the MIT license. See LICENSE file in the project root for full license information.
  */
 
 export interface IImmutableRecord {
@@ -15,7 +15,7 @@ export type ImmutableRecordClass = new (defaults?: { [prop: string]: any }) => I
 
 /**
  * Used to generate different name for dynamically generated record
- * classes so V8 understands how to optimize them a little better. 
+ * classes so V8 understands how to optimize them a little better.
  */
 let recordGenNumber: number = 0;
 
@@ -71,3 +71,6 @@ export function defineRecordClass(defaults: { [prop: string]: any }): ImmutableR
 
     return (new Function("defaults", complete))(defaults);
 }
+
+// To ensure compatibility with immutablejs.Record
+export var Record = defineRecordClass;
